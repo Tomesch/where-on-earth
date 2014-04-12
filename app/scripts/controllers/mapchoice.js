@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('woeApp')
-.controller('MapChoiceCtrl', function ($scope) {
+.controller('MapChoiceCtrl', function ($scope, socket) {
+  socket.on('ask_results', function(){
+    console.log("ok");
+    socket.emit('send_results', $scope.map.center);
+  });
  $scope.map = {
   center: {
     latitude: 34,
