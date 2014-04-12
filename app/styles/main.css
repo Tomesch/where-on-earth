@@ -1,15 +1,29 @@
+html, body{
+  height: 100%;
+}
 
 .container-fluid{
- 
+  height: 100%;
+}
+
+.row{
+  height: 100%
 }
 
 //content containers
 
 .map-container{
   background-color: #bdc3c7;
+  height: 100%;
 }
 
 .chat-container{
-  background-color: #34495e;
-  float: right;
+  background-color: #D65C4D;
+  border-left:1px solid #bdc3c7;
+  height: 100%;
+}
+
+.basic-frame{
+  padding-right:20px;
+  padding-left: 20px;
 }
