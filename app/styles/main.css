@@ -49,8 +49,7 @@ html, body, .container-fluid{
   border-top: 1px solid #dbe1e8;
   background-color: #d5ddde;
   bottom: 0;
-  position: fixed;
-  width: 25%;
+  width: 100%;
 }
 
 .holder{
@@ -99,4 +98,9 @@ html, body, .container-fluid{
 .gplus:hover{
   transition: all 0.4s ease-in-out;
   background-color: #D94C33;
+}
+
+.chat{
+  position:absolute;
+  bottom: 0;
 }

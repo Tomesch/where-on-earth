@@ -1,18 +1,38 @@
-<div id="chatBox"></div>
+<div class="chatdiv" style="height:100%">
+<div id="chatBox" style="height:100%; overflow-y:auto; padding-bottom:85px;"></div>
 
-<form action="/" method="post" id="formChat">
+<form action="/" method="post" id="formChat" class="chat">
     <div class="row">
-        <div class="col-lg-6">
+      <div class="col-lg-12">
             <div class="input-group">
                 <input type="text" id="inputMessage" class="form-control" placeholder="Pseudo ?">
                 <span class="input-group-btn">
                     <button  id="btnSend" class="btn btn-default" type="submit">Connection</button>
                 </span>
             </div>
+            <section class="social">
+        <div class="holder">
+          <a href="#">
+            <div class="text-center soc-item fb">
+              <span class="centerbtn fa fa-facebook"></span>
+            </div>
+          </a>
+          <a target="_blank" href="https://twitter.com/intent/tweet?text=I challenge you to find the location of this image&url=http://whereonearth.com&via=MaximeHeckel&#spaceappchallenge">
+            <div class="text-center soc-item twitter">
+              <span class="centerbtn fa fa-twitter"></span>
+            </div>
+          </a>
+          <a href="#">
+            <div class="text-center soc-item gplus">
+              <span class="centerbtn fa fa-google-plus"></span>
+            </div>
+          </a>
+        </div>
+      </section>
         </div>
     </div>
 </form>
-
+</div>
 <script>
     var socket = io.connect('/');
     var pseudo = null;
@@ -26,6 +46,7 @@
     // Socket.IO event
     socket.on('message', function(data) {
         insereMessage(data.pseudo, data.message, data.color)
+        $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
     })
 
     socket.on('new_player', function(data) {
@@ -68,5 +89,6 @@
     function insereMessage(pseudo, message, color) {
         var d = new Date();
         $chatBox.append('<p style="color:'+ color +'">['+ d.toLocaleTimeString() +'] <strong>' + pseudo + ':</strong> ' + message + '</p>');
+        $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
     }
 </script>
