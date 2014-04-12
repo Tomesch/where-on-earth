@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Space out content a bit */
 html, body {
   padding: 0;
@@ -5,69 +6,84 @@ html, body {
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .angular-google-map-container { height: 400px; with:100%; }
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+html, body{
+  height: 100%;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.container-fluid{
+  height: 100%;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+.row{
+  height: 100%;
 }
-.container-narrow > hr {
-  margin: 30px 0;
+.map-container{
+  background-color: white;
+  height: 100%;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.chat-container{
+  background-color: #384488;
+  border-left:1px solid #bdc3c7;
+  height: 100%;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+.basic-frame{
+  padding-right:20px;
+  padding-left: 20px;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.social{
+  background-color: #d5ddde;
+  bottom: 0;
+  position: fixed;
+  width: 72%;
+}
+
+.holder{
+  width: 101%;
+  margin: 0 auto;
+}
+
+.soc-item{
+  width: 33%;
+  float: left;
+  height: 50px;
+  color: white;
+  font-size: 25px;
+}
+
+.centerbtn{
+  padding:15px;
+}
+
+.soc-item a{
+  color: white;
+}
+
+.fb{
+  background-color: #bdc3c7;
+}
+
+.twitter{
+  background-color: #bdc3c7;
+}
+
+.gplus{
+  background-color: #bdc3c7;
+}
+
+.fb:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: #006BB6;
+}
+
+.twitter:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: #06C1E2;
+}
+
+.gplus:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: #D94C33;
 }
