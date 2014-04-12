@@ -53,6 +53,11 @@
         $chatBox.append('<p style="color:'+ data.color +'"><em>' + data.pseudo + ' </em> enter in chatroom...</p>');
     })
 
+     socket.on('disconnect_player', function(data) {
+        $chatBox.append('<p style="color:'+ data.color +'"><em>' + data.pseudo + ' </em> leave the chatroom...</p>');
+    });
+
+
     // Form submit event
     $('#formChat').submit(function () {
         var message = $inputMessage.val();
