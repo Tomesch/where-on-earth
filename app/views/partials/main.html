@@ -43,13 +43,40 @@
       </div>
   </form>
 </div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Hello, please enter your pseudo</h4>
+      </div>
+      <form id="formEnterChat" ng-submit="enterChat()">
+      <div class="modal-body">
+        <input type="text" class="form-control input-lg" ng-model='inputPseudo' style="border: 1px solid #AAA" required />
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" style="border: none">Go to hell, motherfucker</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
     <script>
         $('#chatBox').bind('DOMNodeInserted DOMNodeRemoved', function(event) {
             $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
         });
-        $(window).load(function(){
-              $('#myModal').modal('show');
+        $(document).ready(function(){
+              $('#myModal').modal({
+                backdrop:'static',
+                keyboard: false,
+                show: false
+              });
+
+              $('#formEnterChat').submit(function(){
+                $('#myModal').modal('hide')
+              })
           });
       </script>
-    </div>
-  </div>
