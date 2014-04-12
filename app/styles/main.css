@@ -7,13 +7,10 @@ html, body{
 }
 
 .row{
-  height: 100%
+  height: 100%;
 }
-
-//content containers
-
 .map-container{
-  background-color: #bdc3c7;
+  background-color: white;
   height: 100%;
 }
 
@@ -26,4 +23,59 @@ html, body{
 .basic-frame{
   padding-right:20px;
   padding-left: 20px;
+}
+
+.social{
+  background-color: #d5ddde;
+  bottom: 0;
+  position: fixed;
+  width: 72%;
+}
+
+.holder{
+  width: 101%;
+  margin: 0 auto;
+}
+
+.soc-item{
+  width: 33%;
+  float: left;
+  height: 50px;
+  color: white;
+  font-size: 25px;
+}
+
+.centerbtn{
+  padding:15px;
+}
+
+.soc-item a{
+  color: white;
+}
+
+.fb{
+  background-color: #bdc3c7;
+}
+
+.twitter{
+  background-color: #bdc3c7;
+}
+
+.gplus{
+  background-color: #bdc3c7;
+}
+
+.fb:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: #006BB6;
+}
+
+.twitter:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: #06C1E2;
+}
+
+.gplus:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: #D94C33;
 }
