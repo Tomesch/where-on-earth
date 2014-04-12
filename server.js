@@ -24,7 +24,12 @@ require('./lib/routes')(app);
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
-io.sockets.on('connection', require('./lib/controllers/chat'));
+io.sockets.on('connection', function(socket){
+  require('./lib/controllers/chat');
+});
+
+require('./lib/controllers/api')(io);
+
 
 // Start server
 server.listen(config.port, function () {

@@ -2,7 +2,7 @@
 
 angular.module('woeApp')
   .controller('ChatCtrl', function ($scope, $http) {
-  	console.log("bla")
+
   	var socket = io.connect('/');
     var pseudo = null;
     var color = null;
@@ -17,7 +17,6 @@ angular.module('woeApp')
 
      socket.on('message', function(data) {
      	var mess = getMessage(data.pseudo, data.message, data.color);
-     	console.log(mess);
        	$scope.messages.push(mess);
        	$scope.$apply();
     });
@@ -34,12 +33,11 @@ angular.module('woeApp')
     });
 
      $scope.sendMessage = function() {
-     	console.log($scope.inputMessage);
      	var message = $scope.inputMessage;
      	if(message !== '') {
      		if(pseudo == null) {
      			pseudo = message;
-                color = getRandomColor();
+                color = getRandomFlatColor();
                 socket.emit('new_player', {pseudo: pseudo, color: color});
                 var mess = getMessage(servPseudo, "You're connected", color);
                 $scope.messagePlaceHolder = 'Enter your message';
@@ -59,6 +57,14 @@ angular.module('woeApp')
      function getMessage(pseudo, message, color) {
      	var mess = {date: new Date().toLocaleTimeString(), pseudo: pseudo, message: message, color: color };
      	return mess;
+     }
+
+     function getRandomFlatColor() {
+     	var tabColor = ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', 
+     	'#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#34495e', '#2c3e50', 
+     	'#f39c12', '#d35400', '#e74c3c', '#95a5a6'];
+
+     	return tabColor[(Math.round(Math.random() * 256 )) % tabColor.length];
      }
 
      function getRandomColor() {
