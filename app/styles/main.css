@@ -1,9 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
 html, body, .container-fluid{
   margin:0;
   padding:0;
   height:100%;
   width:100%;
   overflow: hidden;
+  font-family:'Open Sans';
 }
 
 input:focus {
@@ -56,7 +59,6 @@ input:focus {
 }
 
 .social{
-  border-top: 1px solid #dbe1e8;
   background-color: #d5ddde;
   bottom: 0;
   width: 100%;
@@ -119,4 +121,46 @@ input:focus {
   height:100%;
   overflow-y:auto;
   padding-bottom:85px;
+}
+
+.centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.pt {
+padding-left: 0px;
+padding-right: 0px;
+ background: url(/images/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.content{
+  padding-top:100px;
+  padding-bottom:50px;
+  text-align: center;
+  color: #E2E1E3;
+  font-family:'Open Sans'!important;
+}
+
+h1,h2,h3,h4,h4{
+  font-family:'Open Sans';
+  font-weight: 300;
+}
+
+.desc{
+  margin-top:150px;
+  font-size: 18px;
+}
+
+.start{
+  margin-top:75px;
+}
+
+.startbtn{
+  border-radius: 20px;
+  font-size: 20px;
 }

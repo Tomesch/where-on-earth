@@ -17,6 +17,10 @@ angular.module('woeApp', [
         templateUrl: 'partials/chat',
         controller: 'ChatCtrl'
       })
+      .when('/start',{
+        templateUrl:'partials/start',
+        controller: 'StartCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
