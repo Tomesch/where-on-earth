@@ -1,9 +1,7 @@
 'use strict';
 
 angular.module('woeApp')
-  .controller('ChatCtrl', function ($scope, $http) {
-
-  	var socket = io.connect('/');
+  .controller('ChatCtrl', function ($scope, $http, socket) {
     var pseudo = null;
     var color = null;
 
