@@ -162,7 +162,6 @@ padding-right: 0px;
 }
 
 #content{
-  padding-top:100px;
   padding-bottom:50px;
   text-align: center;
   color: #E2E1E3;
@@ -188,7 +187,7 @@ h1,h2,h3,h4,h4{
 }
 
 .desc{
-  margin-top:150px;
+  margin-top:50px;
   font-size: 18px;
 }
 
@@ -202,6 +201,7 @@ h1,h2,h3,h4,h4{
   font-size: 20px;
   border: none;
 }
+
 .header{
   width: 75%;
   z-index: 2;
@@ -210,9 +210,15 @@ h1,h2,h3,h4,h4{
   background-color: #EAEDF1;
   padding:15px;
 }
+
 .header-logo{
   float:left;
 }
+
 .header-info{
   float:right;
+}
+
+.main-logo{
+  width:55%;
 }
