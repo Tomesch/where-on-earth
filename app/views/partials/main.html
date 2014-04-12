@@ -1,7 +1,25 @@
   <div class="map-container">
     <google-map  class="angular-google-map-container" control="map.control" draggable="map.draggable" events="map.events" options="map.options" center="map.center" zoom="map.zoom"></google-map>
       <div ng-controller="MapChoiceCtrl" ng-include="'partials/mapchoice'"></div>
-  </div><!--
-  --><div class="sidebar-container">
-    d
+  </div>
+  <div class="sidebar-container">
+    <section class="social">
+        <div class="holder">
+          <a href="#">
+            <div class="text-center soc-item fb">
+              <span class="centerbtn fa fa-facebook"></span>
+            </div>
+          </a>
+          <a target="_blank" href="https://twitter.com/intent/tweet?text=I challenge you to find the location of this image&url=http://whereonearth.com&via=MaximeHeckel&#spaceappchallenge">
+            <div class="text-center soc-item twitter">
+              <span class="centerbtn fa fa-twitter"></span>
+            </div>
+          </a>
+          <a href="#">
+            <div class="text-center soc-item gplus">
+              <span class="centerbtn fa fa-google-plus"></span>
+            </div>
+          </a>
+        </div>
+      </section>
   </div>
