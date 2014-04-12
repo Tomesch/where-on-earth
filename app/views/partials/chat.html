@@ -1,0 +1,72 @@
+<div id="chatBox"></div>
+
+<form action="/" method="post" id="formChat">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" id="inputMessage" class="form-control" placeholder="Pseudo ?">
+                <span class="input-group-btn">
+                    <button  id="btnSend" class="btn btn-default" type="submit">Connection</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    var socket = io.connect('/');
+    var pseudo = null;
+    var color = null;
+
+    // Element
+    var $btnSend = $('#btnSend');
+    var $inputMessage = $('#inputMessage');
+    var $chatBox = $('#chatBox');
+
+    // Socket.IO event
+    socket.on('message', function(data) {
+        insereMessage(data.pseudo, data.message, data.color)
+    })
+
+    socket.on('new_player', function(data) {
+        $chatBox.append('<p style="color:'+ data.color +'"><em>' + data.pseudo + ' </em> enter in chatroom...</p>');
+    })
+
+    // Form submit event
+    $('#formChat').submit(function () {
+        var message = $inputMessage.val();
+        if(message != '') {
+            if(pseudo == null) {
+                pseudo = message;
+                color = getRandomColor();
+                socket.emit('new_player', {pseudo: pseudo, color: color});
+                $btnSend.text("Send");
+                $inputMessage.attr('placeholder', 'Enter your message ...').attr('autocomplete', 'off');
+                $inputMessage.val('').focus();
+                $chatBox.append('<span style="color:'+color+'">' + "You're connected</span>");
+            }
+            else {
+                socket.emit('message', message); 
+                insereMessage(pseudo, message, color); 
+                $inputMessage.val('').focus(); 
+            }
+        }
+        return false;
+    });
+
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+        for (var i = 0; i < 6; i++ ) {
+            color += letters[Math.round(Math.random() * 15)];
+        }
+        return color;
+    }
+
+
+    function insereMessage(pseudo, message, color) {
+        var d = new Date();
+        $chatBox.append('<p style="color:'+ color +'">['+ d.toLocaleTimeString() +'] <strong>' + pseudo + ':</strong> ' + message + '</p>');
+    }
+</script>
