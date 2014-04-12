@@ -1,13 +1,15 @@
 <div class="chatdiv" style="height:100%">
-<div id="chatBox" class="chatoverflow"></div>
+<div id="chatBox" class="chatoverflow">
+    <p ng-repeat="message in messages" style="color: {{message.color}}">[{{message.date}}] <strong>{{message.pseudo}} :</strong> {{message.message}}</p>
+</div>
 
-<form action="/" method="post" id="formChat" class="chat">
+<form ng-submit='sendMessage()' class="chat">
     <div class="row">
       <div class="col-lg-12">
             <div class="input-group">
-                <input type="text" id="inputMessage" class="form-control"  styplaceholder="Pseudo ?">
+                <input type="text" class="form-control" ng-model="inputMessage"  placeholder="{{ messagePlaceHolder }}">
                 <span class="input-group-btn">
-                    <button  id="btnSend" class="btn btn-default" type="submit">Connection</button>
+                    <button class="btn btn-default" type="submit">{{ sendValue }}</button>
                 </span>
             </div>
             <section class="social">
@@ -34,66 +36,7 @@
 </form>
 </div>
 <script>
-    var socket = io.connect('/');
-    var pseudo = null;
-    var color = null;
-
-    // Element
-    var $btnSend = $('#btnSend');
-    var $inputMessage = $('#inputMessage');
-    var $chatBox = $('#chatBox');
-
-    // Socket.IO event
-    socket.on('message', function(data) {
-        insereMessage(data.pseudo, data.message, data.color)
+    $('#chatBox').bind('DOMNodeInserted DOMNodeRemoved', function(event) {
         $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
-    })
-
-    socket.on('new_player', function(data) {
-        $chatBox.append('<p style="color:'+ data.color +'"><em>' + data.pseudo + ' </em> enter in chatroom...</p>');
-    })
-
-     socket.on('disconnect_player', function(data) {
-        $chatBox.append('<p style="color:'+ data.color +'"><em>' + data.pseudo + ' </em> leave the chatroom...</p>');
     });
-
-
-    // Form submit event
-    $('#formChat').submit(function () {
-        var message = $inputMessage.val();
-        if(message != '') {
-            if(pseudo == null) {
-                pseudo = message;
-                color = getRandomColor();
-                socket.emit('new_player', {pseudo: pseudo, color: color});
-                $btnSend.text("Send");
-                $inputMessage.attr('placeholder', 'Enter your message ...').attr('autocomplete', 'off');
-                $inputMessage.val('').focus();
-                $chatBox.append('<span style="color:'+color+'">' + "You're connected</span>");
-            }
-            else {
-                socket.emit('message', message); 
-                insereMessage(pseudo, message, color); 
-                $inputMessage.val('').focus(); 
-            }
-        }
-        return false;
-    });
-
-
-    function getRandomColor() {
-        var letters = '0123456789ABCDEF'.split('');
-        var color = '#';
-        for (var i = 0; i < 6; i++ ) {
-            color += letters[Math.round(Math.random() * 15)];
-        }
-        return color;
-    }
-
-
-    function insereMessage(pseudo, message, color) {
-        var d = new Date();
-        $chatBox.append('<p style="color:'+ color +'">['+ d.toLocaleTimeString() +'] <strong>' + pseudo + ':</strong> ' + message + '</p>');
-        $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
-    }
 </script>
