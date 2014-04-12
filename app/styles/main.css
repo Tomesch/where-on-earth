@@ -34,11 +34,10 @@ button:hover
   border-radius:0px;
 }
 
-.form-control{
-  border-radius:0px;
-  border:0;
-  border-top: 1px solid #CCC!important;
+.borderless{
+  border:none;
 }
+
 #btnSend{
   border:0;
   border-top: 1px solid #CCC;
