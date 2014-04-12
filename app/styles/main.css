@@ -5,8 +5,21 @@ html, body, .container-fluid{
   width:100%;
   overflow: hidden;
 }
+
+input:focus {
+  outline: none;
+}
+
 *{
   box-sizing:border-box;
+}
+
+.btn{
+  border-radius:0px;
+}
+
+.form-control{
+  border-radius:0px;
 }
 .angular-google-map-container, .angular-google-map{
   position: relative;
@@ -103,4 +116,10 @@ html, body, .container-fluid{
 .chat{
   position:absolute;
   bottom: 0;
+}
+
+.chatoverflow{
+  height:100%;
+  overflow-y:auto;
+  padding-bottom:85px;
 }
