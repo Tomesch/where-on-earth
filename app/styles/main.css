@@ -8,20 +8,34 @@ html, body, .container-fluid{
 *{
   box-sizing:border-box;
 }
-.angular-google-map-container{
-  height:400px;
-  width:400px;
+.angular-google-map-container, .angular-google-map{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.choice-map-container{
+  border: 3px solid #fff;
+  position: absolute;
+  opacity: 0.5;
+  bottom:15px;
+  left:15px;
+  width: 33%;
+}
+.choice-map-container:hover{
+  opacity: 1;
 }
 .container{
   height:100%;
   width:100%;
 }
 .map-container{
+  position: relative;
   float: left;
   width:75%;
   height:100%;
 }
 .sidebar-container{
+  position: relative;
   padding: 15px;
   border-left:1px solid #000;
   float: left;

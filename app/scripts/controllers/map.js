@@ -7,8 +7,8 @@ angular.module('woeApp')
   });*/
   $scope.map = {
     center: {
-        latitude: 45,
-        longitude: -73
+        latitude: -28.5433333300,
+        longitude: -54.2658333300
     },
     zoom: 19,
     draggable: false,
