@@ -3,51 +3,70 @@
     Cupola, why don't you eat my pula ? 
     </div>
     <div class="header-info">
-    df
     </div>
   </header>
   <div class="map-container">
+    <!-- Modal -->
+  <div class="modal" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          Hello Frucht
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
     <google-map  control="map.control" draggable="map.draggable" events="map.events" options="map.options" center="map.center" zoom="map.zoom"></google-map>
     <div ng-controller="MapChoiceCtrl" ng-include="'partials/mapchoice'"></div>
-       </div>
+  </div>
   <div class="sidebar-container">
     <div ng-controller="ChatCtrl" style="height:100%">
-    	<div class="chatdiv" style="height:100%">
-<div id="chatBox" class="chatoverflow">
-    <p ng-repeat="message in messages" style="color: {{message.color}}">[{{message.date}}] <strong>{{message.pseudo}} :</strong> {{message.message}}</p>
-</div>
-
-<form ng-submit='sendMessage()' class="chat">
-    <div class="row">
-      <div class="col-lg-12">
-            <div class="input-group">
+      <div class="chatdiv" style="height:100%">
+        <div id="chatBox" class="chatoverflow">
+          <p ng-repeat="message in messages" style="color: {{message.color}}">[{{message.date}}] <strong>{{message.pseudo}} :</strong> {{message.message}}</p>
+        </div>
+        <form ng-submit='sendMessage()' class="chat">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="input-group">
                 <input type="text" class="form-control borderless" ng-model="inputMessage"  placeholder="{{ messagePlaceHolder }}">
                 <span class="input-group-btn">
-                    <button class="btn btn-default btn btn-info borderless" type="submit">{{ sendValue }}</button>
+                  <button class="btn btn-default btn btn-info borderless" type="submit">{{ sendValue }}</button>
                 </span>
+              </div>
+          <section class="social">
+            <div class="holder">
+              <a href="#">
+                <div class="text-center soc-item fb">
+                  <span class="centerbtn fa fa-facebook"></span>
+                </div>
+              </a>
+              <a target="_blank" href="https://twitter.com/intent/tweet?text=I challenge you to find the location of this image&url=http://whereonearth.com&via=MaximeHeckel&#spaceappchallenge">
+                <div class="text-center soc-item twitter">
+                  <span class="centerbtn fa fa-twitter"></span>
+                </div>
+              </a>
             </div>
-            <section class="social">
-        <div class="holder">
-          <a href="#">
-            <div class="text-center soc-item fb">
-              <span class="centerbtn fa fa-facebook"></span>
-            </div>
-          </a>
-          <a target="_blank" href="https://twitter.com/intent/tweet?text=I challenge you to find the location of this image&url=http://whereonearth.com&via=MaximeHeckel&#spaceappchallenge">
-            <div class="text-center soc-item twitter">
-              <span class="centerbtn fa fa-twitter"></span>
-            </div>
-          </a>
+          </section>
         </div>
-      </section>
-        </div>
-    </div>
-</form>
+      </div>
+  </form>
 </div>
-<script>
-    $('#chatBox').bind('DOMNodeInserted DOMNodeRemoved', function(event) {
-        $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
-    });
-</script>
+    <script>
+        $('#chatBox').bind('DOMNodeInserted DOMNodeRemoved', function(event) {
+            $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
+        });
+        $(window).load(function(){
+              $('#myModal').modal('show');
+          });
+      </script>
     </div>
   </div>
