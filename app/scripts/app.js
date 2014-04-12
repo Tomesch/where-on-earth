@@ -5,6 +5,7 @@ angular.module('woeApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  
   'google-maps'
 ])
   .config(function ($routeProvider, $locationProvider) {
