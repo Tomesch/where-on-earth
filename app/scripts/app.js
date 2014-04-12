@@ -4,13 +4,14 @@ angular.module('woeApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'google-maps'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'partials/main',
-        controller: 'MainCtrl'
+        controller: 'MapCtrl'
       })
       .when('/chat', {
         templateUrl: 'partials/chat',

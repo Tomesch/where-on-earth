@@ -11,6 +11,7 @@
     "angular-cookies": "1.2.11",
     "angular-sanitize": "1.2.11",
     "angular-route": "1.2.11",
+    "angular-google-maps": "~1.0.18",
     "socket.io-client": "~0.9.16"
   },
   "devDependencies": {

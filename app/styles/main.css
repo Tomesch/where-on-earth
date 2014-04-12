@@ -1,79 +1,86 @@
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+html, body, .container-fluid{
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+  overflow: hidden;
+}
+*{
+  box-sizing:border-box;
+}
+.angular-google-map-container{
+  height:400px;
+  width:400px;
+}
+.container{
+  height:100%;
+  width:100%;
+}
+.map-container{
+  float: left;
+  width:75%;
+  height:100%;
+}
+.sidebar-container{
+  padding: 15px;
+  border-left:1px solid #000;
+  float: left;
+  width:25%;
+  height:100%;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.social{
+  background-color: #d5ddde;
+  bottom: 0;
+  position: fixed;
+  width: 25%;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+.holder{
+  width: 101%;
+  margin: 0 auto;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.soc-item{
+  width: 33%;
+  float: left;
+  height: 50px;
+  color: white;
+  font-size: 25px;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
+.centerbtn{
+  padding:15px;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.soc-item a{
+  color: white;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+.fb{
+  background-color: #bdc3c7;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.twitter{
+  background-color: #bdc3c7;
 }
+
+.gplus{
+  background-color: #bdc3c7;
+}
+
+.fb:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: #006BB6;
+}
+
+.twitter:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: #06C1E2;
+}
+
+.gplus:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: #D94C33;
+}
+
