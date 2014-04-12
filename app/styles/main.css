@@ -1,16 +1,10 @@
 /* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+html, body {
+  padding: 0;
+  margin: 0;
 }
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
+.angular-google-map-container { height: 400px; with:100%; }
 
 /* Custom page header */
 .header {
