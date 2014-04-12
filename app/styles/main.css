@@ -22,14 +22,15 @@ html, body, .container-fluid{
   height:100%;
 }
 .sidebar-container{
-  padding: 15px;
-  border-left:1px solid #000;
+  border: 1px solid #dbe1e8;
   float: left;
   width:25%;
   height:100%;
+  background-color: #EAEDF1
 }
 
 .social{
+  border-top: 1px solid #dbe1e8;
   background-color: #d5ddde;
   bottom: 0;
   position: fixed;
