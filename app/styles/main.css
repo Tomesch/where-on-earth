@@ -1,89 +1,30 @@
-<<<<<<< HEAD
-/* Space out content a bit */
-html, body {
-  padding: 0;
-  margin: 0;
+html, body, .container-fluid{
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+  overflow: hidden;
 }
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.angular-google-map-container { height: 400px; with:100%; }
-html, body{
-  height: 100%;
+*{
+  box-sizing:border-box;
 }
-
-.container-fluid{
-  height: 100%;
+.angular-google-map-container{
+  height:400px;
+  width:400px;
 }
-
-.row{
-  height: 100%;
+.container{
+  height:100%;
+  width:100%;
 }
 .map-container{
-  background-color: white;
-  height: 100%;
-}
-
-.chat-container{
-  background-color: #384488;
-  border-left:1px solid #bdc3c7;
-  height: 100%;
-}
-
-.basic-frame{
-  padding-right:20px;
-  padding-left: 20px;
-}
-
-.social{
-  background-color: #d5ddde;
-  bottom: 0;
-  position: fixed;
-  width: 72%;
-}
-
-.holder{
-  width: 101%;
-  margin: 0 auto;
-}
-
-.soc-item{
-  width: 33%;
   float: left;
-  height: 50px;
-  color: white;
-  font-size: 25px;
+  width:75%;
+  height:100%;
 }
-
-.centerbtn{
-  padding:15px;
-}
-
-.soc-item a{
-  color: white;
-}
-
-.fb{
-  background-color: #bdc3c7;
-}
-
-.twitter{
-  background-color: #bdc3c7;
-}
-
-.gplus{
-  background-color: #bdc3c7;
-}
-
-.fb:hover{
-  transition: all 0.4s ease-in-out;
-  background-color: #006BB6;
-}
-
-.twitter:hover{
-  transition: all 0.4s ease-in-out;
-  background-color: #06C1E2;
-}
-
-.gplus:hover{
-  transition: all 0.4s ease-in-out;
-  background-color: #D94C33;
+.sidebar-container{
+  padding: 15px;
+  border-left:1px solid #000;
+  float: left;
+  width:25%;
+  height:100%;
 }
