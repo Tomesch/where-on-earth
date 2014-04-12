@@ -30,6 +30,12 @@ angular.module('woeApp')
       $('.choice-map-container').css('height', width);
       google.maps.event.trigger(map, "resize");
     },
+    bounds_changed: function(map){
+      var map = $scope.map.control.getGMap(),
+      width = $('.choice-map-container').width();
+      $('.choice-map-container').css('height', width);
+      google.maps.event.trigger(map, "resize");
+    },
     click: function(map, eventName, eventArgs){
       var e = eventArgs[0];
       $scope.$apply(function(){

@@ -10,7 +10,7 @@ angular.module('woeApp')
         latitude: -28.5433333300,
         longitude: -54.2658333300
     },
-    zoom: 19,
+    zoom: 18,
     draggable: false,
     control: {},
     options: {

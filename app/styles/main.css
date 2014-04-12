@@ -29,13 +29,10 @@ input:focus {
 .choice-map-container{
   border: 3px solid #fff;
   position: absolute;
-  opacity: 0.5;
+  opacity: 1;
   bottom:15px;
   left:15px;
   width: 33%;
-}
-.choice-map-container:hover{
-  opacity: 1;
 }
 .container{
   height:100%;
