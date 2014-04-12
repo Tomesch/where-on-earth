@@ -4,10 +4,13 @@ html, body, .container-fluid{
   height:100%;
   width:100%;
   overflow: hidden;
+  font-family: 'Open Sans';
+  font-weight:300;
 }
 *{
   box-sizing:border-box;
 }
+
 .angular-google-map-container{
   height:400px;
   width:400px;
@@ -26,7 +29,9 @@ html, body, .container-fluid{
   float: left;
   width:25%;
   height:100%;
-  background-color: #EAEDF1
+  background-color: #EAEDF1;
+  font-family: 'Open Sans';
+  font-weight:400;
 }
 
 .social{
