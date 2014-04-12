@@ -62,13 +62,14 @@ button:hover
   width:100%;
 }
 .map-container{
+  z-index:1;
   position: relative;
   float: left;
   width:75%;
   height:100%;
 }
 .sidebar-container{
-  border: 1px solid #ccc;
+  border-left: 1px solid #ccc;
   position: relative;
   float: left;
   width:25%;
@@ -201,4 +202,18 @@ h1,h2,h3,h4,h4{
   border-radius: 20px;
   font-size: 20px;
   border: none;
+}
+.header{
+  width: 75%;
+  z-index: 2;
+  position: absolute;
+  border-bottom: 1px solid #CCC;
+  background-color: #EAEDF1;
+  padding:15px;
+}
+.header-logo{
+  float:left;
+}
+.header-info{
+  float:right;
 }
