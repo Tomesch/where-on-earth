@@ -12,9 +12,9 @@
     <div ng-controller="MapChoiceCtrl" ng-include="'partials/mapchoice'"></div>
     <div ng-controller="InfoboxCtrl" class="infoBox" style="{{ display }}">
       <img src='{{ location.image_url[0] }}' alt="There is no image for this place." align="right" >
-      <h1>{{ location.site[0] }}</h1>
+      <h1>{{ site }}</h1>
       <h2>{{ location.states[0] }}</h2>
-      <p>{{ location.short_description[0] }}</p>
+      <p>{{ desc }}</p>
       <p>Find more about it at <a href='{{ location.http_url[0] }}' target="_blank">'
       {{ location.http_url[0] }}</a> </p>
     </div>
