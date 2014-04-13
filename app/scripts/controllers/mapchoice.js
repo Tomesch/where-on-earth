@@ -47,12 +47,16 @@ angular.module('woeApp')
       var map = $scope.map.control.getGMap(),
       width = $('.choice-map-container').width();
       $('.choice-map-container').css('height', width);
+      $('.infoBox').css('height', width);
+      $('.infoBox').css('width', (width*1.5) + 'px');
       google.maps.event.trigger(map, "resize");
     },
     bounds_changed: function(map){
       var map = $scope.map.control.getGMap(),
       width = $('.choice-map-container').width();
       $('.choice-map-container').css('height', width);
+      $('.infoBox').css('height', width);
+      $('.infoBox').css('width', (width*1.5) + 'px');
       google.maps.event.trigger(map, "resize");
     },
     click: function(map, eventName, eventArgs){

@@ -10,7 +10,7 @@
   <div class="map-container">
     <google-map  control="map.control" draggable="map.draggable" events="map.events" options="map.options" center="map.center" zoom="map.zoom"></google-map>
     <div ng-controller="MapChoiceCtrl" ng-include="'partials/mapchoice'"></div>
-    <div ng-controller="InfoboxCtrl" class="infoBox" style="{{ display }}">
+    <div ng-controller="InfoboxCtrl" class="infoBox" style="">
       <img src='{{ location.image_url[0] }}' alt="There is no image for this place." align="right" >
       <h1>{{ site }}</h1>
       <h2>{{ location.states[0] }}</h2>
