@@ -260,6 +260,27 @@ h1,h2,h3,h4,h4{
     margin-top: 0;
 }
 
+.infoBox {
+  width: 40%;
+  height: 300px;
+  position: fixed;
+  bottom: 15px;
+  left: 27%;
+  background: rgba(255,255,255,.8);
+  padding: 5px;
+  overflow-y: scroll;
+  display: none;
+}
+
+
+.infoBox h1 {
+  font-size: 25px;
+}
+
+.infoBox h2 {
+  font-size: 20px;
+}
+
 @media (max-width: 767px) {
   .modal-dialog {
     width: 100%;

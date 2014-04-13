@@ -5,10 +5,10 @@ angular.module('woeApp')
   var timer;
   socket.on('new', function() {
     clearInterval(timer);
-    var time = 200;
+    var time = 100;
     timer = setInterval(function(){
       time--;
-      NProgress.set(time/200);
+      NProgress.set(time/100);
     },100);
   });
   socket.on('ask_results', function(){
