@@ -10,7 +10,7 @@ angular.module('woeApp', [
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/', {
+      .when('/play', {
         templateUrl: 'partials/main',
         controller: 'MapCtrl'
       })
@@ -18,7 +18,7 @@ angular.module('woeApp', [
         templateUrl: 'partials/chat',
         controller: 'ChatCtrl'
       })
-      .when('/start',{
+      .when('/',{
         templateUrl:'partials/start',
         controller: 'StartCtrl'
       })
