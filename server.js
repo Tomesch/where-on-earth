@@ -24,11 +24,20 @@ require('./lib/routes')(app);
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
+var api = require('./lib/util/api')(io);
+
 io.sockets.on('connection', function(socket){
+  if(api.nbPlayers === 0){
+    api.sendLocation('Cultural');
+  }
+  api.nbPlayers++;
   require('./lib/controllers/chat')(socket);
+  require('./lib/controllers/map')(socket, api);
 });
 
-require('./lib/controllers/api')(io);
+io.sockets.on('disconnect',function(){
+  api.nbPlayers--;
+});
 
 
 // Start server

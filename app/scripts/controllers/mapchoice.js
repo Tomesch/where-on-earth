@@ -3,7 +3,7 @@
 angular.module('woeApp')
 .controller('MapChoiceCtrl', function ($scope, socket) {
   socket.on('ask_results', function(){
-    console.log("ok");
+    alert("ask_results");
     socket.emit('send_results', $scope.map.center);
   });
  $scope.map = {
