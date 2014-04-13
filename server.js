@@ -23,7 +23,7 @@ require('./lib/routes')(app);
 
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
-//io.set('log level', 2); 
+io.set('log level', 2); 
 var api = require('./lib/util/api')(io);
 
 io.sockets.on('connection', function(socket){
