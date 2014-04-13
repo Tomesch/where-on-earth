@@ -41,7 +41,7 @@ io.sockets.on('connection', function(socket){
     socket.set('pseudo', pseudo);
     socket.set('color', color);
     socket.set('score', 0);
-    
+
     socket.broadcast.emit('new_player', {pseudo: pseudo, color: color});
 
     socket.on('disconnect', function() {
@@ -54,7 +54,7 @@ io.sockets.on('connection', function(socket){
       });
     });
   });
-  require('./lib/controllers/chat')(socket);
+  require('./lib/controllers/chat')(socket, io);
   require('./lib/controllers/map')(socket, api, io);
 });
 
