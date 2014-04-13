@@ -19,7 +19,7 @@ angular.module('woeApp')
     });
 
      socket.on('new_player', function(data) {
-     	var mess = getMessage(servPseudo, data.pseudo+'started playing.', data.color);
+     	var mess = getMessage(servPseudo, data.pseudo+' started playing.', data.color);
      	$scope.messages.push(mess);
     });
 
