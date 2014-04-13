@@ -69,6 +69,9 @@ io.sockets.on('connection', function(socket){
   require('./lib/controllers/map')(socket, api, io);
 });
 
+process.on('uncaughtException', function (err) {
+	api.nbPlayers--;
+});
 
 // Start server
 server.listen(config.port, function () {
