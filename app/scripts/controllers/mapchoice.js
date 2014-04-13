@@ -2,6 +2,15 @@
 
 angular.module('woeApp')
 .controller('MapChoiceCtrl', function ($scope, socket) {
+  var timer;
+  socket.on('new', function() {
+    clearInterval(timer);
+    var time = 200;
+    timer = setInterval(function(){
+      time--;
+      NProgress.set(time/200);
+    },100);
+  });
   socket.on('ask_results', function(){
     var data = {
       latitude: $scope.map.clickedMarker.latitude,
@@ -9,8 +18,8 @@ angular.module('woeApp')
     };
     socket.emit('send_results', data);
   });
-  socket.on('won', function(){
-    alert("you won");
+  socket.on('end_of_round', function(){
+    
   });
  $scope.map = {
   center: {

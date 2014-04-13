@@ -23,7 +23,7 @@ require('./lib/routes')(app);
 
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
-
+io.set('log level', 2); 
 var api = require('./lib/util/api')(io);
 
 io.sockets.on('connection', function(socket){
@@ -32,7 +32,7 @@ io.sockets.on('connection', function(socket){
       api.sendLocation('Cultural');
     }
     else{
-      api.sendCurrent();
+      api.sendCurrent(socket);
     }
     api.nbPlayers++;
     var pseudo = data.pseudo,
@@ -40,9 +40,12 @@ io.sockets.on('connection', function(socket){
 
     socket.set('pseudo', pseudo);
     socket.set('color', color);
+    socket.set('score', 0);
+    
     socket.broadcast.emit('new_player', {pseudo: pseudo, color: color});
 
     socket.on('disconnect', function() {
+      api.nbPlayers--;
       socket.get('pseudo', function (error, pseudo) {
         socket.get('color', function(error, color) {
           console.log(pseudo + ' disconnect');
@@ -53,10 +56,6 @@ io.sockets.on('connection', function(socket){
   });
   require('./lib/controllers/chat')(socket);
   require('./lib/controllers/map')(socket, api, io);
-});
-
-io.sockets.on('disconnect',function(){
-  api.nbPlayers--;
 });
 
 

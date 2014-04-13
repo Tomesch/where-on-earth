@@ -70,17 +70,6 @@
             $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
         });
 
-              var totalTime = 20;
-              var actualTime = 20;
-
-              function decreaseProgressBar() {
-                actualTime--;
-
-                if(actualTime == 0)
-                  actualTime = 19;
-
-                NProgress.set(actualTime / 20);
-              }
         $(document).ready(function(){
               $('#myModal').modal({
                 backdrop:'static',
@@ -91,11 +80,5 @@
               $('#formEnterChat').submit(function(){
                 $('#myModal').modal('hide')
               })
-
-              NProgress.configure({ trickle: false });
-              NProgress.set(0.9999);
-
-
-              setInterval('decreaseProgressBar()', 1000);
           });
       </script>
