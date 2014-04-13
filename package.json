@@ -12,7 +12,8 @@
     "yo": "^1.1.2",
     "generator-angular-fullstack": "^1.3.3",
     "xml2js": "~0.4.2",
-    "connect-livereload": "latest"
+    "connect-livereload": "latest",
+    "bower": "latest"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
