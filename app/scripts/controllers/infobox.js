@@ -9,6 +9,7 @@ angular.module('woeApp')
 
 	var timer;
 	socket.on('information', function(data){
+		NProgress.set(0.1);
 		console.log(data);
 		$scope.location = data.location;
 		$scope.display = 'display: block';
