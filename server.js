@@ -27,12 +27,32 @@ var io = require('socket.io').listen(server);
 var api = require('./lib/util/api')(io);
 
 io.sockets.on('connection', function(socket){
-  if(api.nbPlayers === 0){
-    api.sendLocation('Cultural');
-  }
-  api.nbPlayers++;
+  socket.on('new_player', function(data) {
+    if(api.nbPlayers === 0){
+      api.sendLocation('Cultural');
+    }
+    else{
+      api.sendCurrent();
+    }
+    api.nbPlayers++;
+    var pseudo = data.pseudo,
+    color = data.color;
+
+    socket.set('pseudo', pseudo);
+    socket.set('color', color);
+    socket.broadcast.emit('new_player', {pseudo: pseudo, color: color});
+
+    socket.on('disconnect', function() {
+      socket.get('pseudo', function (error, pseudo) {
+        socket.get('color', function(error, color) {
+          console.log(pseudo + ' disconnect');
+          socket.broadcast.emit('disconnect_player', {pseudo: pseudo, color: color});
+        });
+      });
+    });
+  });
   require('./lib/controllers/chat')(socket);
-  require('./lib/controllers/map')(socket, api);
+  require('./lib/controllers/map')(socket, api, io);
 });
 
 io.sockets.on('disconnect',function(){

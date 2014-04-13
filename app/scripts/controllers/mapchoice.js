@@ -3,8 +3,14 @@
 angular.module('woeApp')
 .controller('MapChoiceCtrl', function ($scope, socket) {
   socket.on('ask_results', function(){
-    alert("ask_results");
-    socket.emit('send_results', $scope.map.center);
+    var data = {
+      latitude: $scope.map.clickedMarker.latitude,
+      longitude: $scope.map.clickedMarker.longitude
+    };
+    socket.emit('send_results', data);
+  });
+  socket.on('won', function(){
+    alert("you won");
   });
  $scope.map = {
   center: {
@@ -24,8 +30,8 @@ angular.module('woeApp')
       animation: google.maps.Animation.DROP,
       draggable: true
     },
-    latitude: null,
-    longitude: null
+    latitude: 0,
+    longitude: 0
   },
   events: {
     tilesloaded: function(){
