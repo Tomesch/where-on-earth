@@ -2,8 +2,8 @@
     <div class="header-logo">
       <img class="nav-logo" src="/images/logo5.png">
     </div>
-    <div class="header-info">
-    <span>Score <span class="badge">42</span></span>
+    <div ng-controller="ScoreCtrl" class="header-info">
+    <span>Score <span class="badge">{{score}}</span></span>
     </div>
     <div class="counter" role="bar"></div>
   </header>
