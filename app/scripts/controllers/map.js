@@ -3,6 +3,8 @@
 angular.module('woeApp')
 .controller('MapCtrl', function ($scope, $http, socket) {
   socket.on('new', function(data){
+    var time = 0;
+
     $scope.map.center = {
       latitude: data.latitude,
       longitude: data.longitude

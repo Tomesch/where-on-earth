@@ -28,3 +28,5 @@ angular.module('woeApp', [
       
     $locationProvider.html5Mode(true);
   });
+
+NProgress.configure({ trickle: false });

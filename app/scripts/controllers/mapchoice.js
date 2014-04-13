@@ -9,8 +9,8 @@ angular.module('woeApp')
     };
     socket.emit('send_results', data);
   });
-  socket.on('won', function(){
-    alert("you won");
+  socket.on('end_of_round', function(){
+    
   });
  $scope.map = {
   center: {
