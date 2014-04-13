@@ -23,11 +23,12 @@ require('./lib/routes')(app);
 
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
-io.set('log level', 2); 
+//io.set('log level', 2); 
 var api = require('./lib/util/api')(io);
 
 io.sockets.on('connection', function(socket){
   socket.on('new_player', function(data) {
+    socket.join('ready');
     if(api.nbPlayers === 0){
       api.sendLocation('Cultural');
     }
@@ -45,6 +46,7 @@ io.sockets.on('connection', function(socket){
     socket.broadcast.emit('new_player', {pseudo: pseudo, color: color});
 
     socket.on('disconnect', function() {
+      socket.leave('ready');
       api.nbPlayers--;
       socket.get('pseudo', function (error, pseudo) {
         socket.get('color', function(error, color) {
