@@ -9,6 +9,7 @@ angular.module('woeApp')
 
 	var timer;
 	socket.on('information', function(data){
+		NProgress.set(0.1);
 		console.log(data);
 		$scope.location = data.location;
 		$scope.display = 'display: block';
@@ -46,6 +47,7 @@ angular.module('woeApp')
 			text = text.replace('&nbsp;', ' ');
 			text = text.replace('&ldquo;', '"');
 			text = text.replace('&rdquo;', '"');
+			text = text.replace('&Oslash;', 'Ø');
 
 			text = text.replace(/<(?:.|\n)*?>/gm, '');
 
