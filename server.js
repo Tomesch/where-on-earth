@@ -27,6 +27,10 @@ io.set('log level', 2);
 var api = require('./lib/util/api')(io);
 
 io.sockets.on('connection', function(socket){
+  socket.on('error', function (exc) {
+    socket.disconnect();
+  });
+
   socket.on('new_player', function(data) {
     socket.join('ready');
     if(api.nbPlayers === 0){
