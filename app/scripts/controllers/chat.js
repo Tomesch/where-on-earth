@@ -36,17 +36,17 @@ angular.module('woeApp')
      	}
      }
 
-     $scope.enterChat = function() {
-        pseudo = $scope.inputPseudo;
-        if(!pseudo){
-            pseudo = "noname";
+     $scope.enterChat = function(valid) {
+        if(valid){
+            $('#myModal').modal('hide');
+            pseudo = $scope.inputPseudo;
+            color = getRandomFlatColor();
+            socket.emit('new_player', {pseudo: pseudo, color: color});
+            var mess = getMessage(servPseudo, "You're connected", color);
+            $scope.messagePlaceHolder = 'Enter your message';
+            $scope.sendValue = 'Send'
+            $scope.messages.push(mess);
         }
-        color = getRandomFlatColor();
-        socket.emit('new_player', {pseudo: pseudo, color: color});
-        var mess = getMessage(servPseudo, "You're connected", color);
-        $scope.messagePlaceHolder = 'Enter your message';
-        $scope.sendValue = 'Send'
-        $scope.messages.push(mess);
      }
 
 

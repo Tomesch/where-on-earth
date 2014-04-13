@@ -60,9 +60,9 @@
       <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Welcome ! Please enter your username</h4>
       </div>
-      <form id="formEnterChat" ng-submit="enterChat()">
+      <form name="formEnterChat" id="formEnterChat" ng-submit="enterChat(formEnterChat.$valid)">
       <div class="modal-body">
-        <input type="text" class="form-control input-lg" ng-model='inputPseudo' style="border: 1px solid #AAA" ng-pattern="[a-zA-Z]" />
+        <input type="text" class="form-control input-lg" name="inputPseudo" ng-model='inputPseudo' style="border: 1px solid #AAA" ng-pattern="[a-zA-Z]" required/>
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary" style="border: none;">Submit</button>
@@ -85,10 +85,6 @@
                 keyboard: false,
                 show: true
               });
-
-              $('#formEnterChat').submit(function(e){
-                $('#myModal').modal('hide')
-              })
           });
 
         function adjustModalMaxHeightAndPosition(){
