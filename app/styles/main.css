@@ -27,7 +27,6 @@ button:active,
 button:hover
 {
   outline: none;
-  border:none;
   box-shadow:none !important;
 }
 .btn{
@@ -36,6 +35,10 @@ button:hover
 
 .borderless{
   border:none;
+}
+
+.noradius{
+  border-radius:0px;
 }
 
 #btnSend{
