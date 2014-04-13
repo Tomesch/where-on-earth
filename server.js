@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 'use strict';
 
 var express = require('express');
@@ -82,4 +80,3 @@ server.listen(config.port, function () {
 
 // Expose app
 exports = module.exports = app;
->>>>>>> 6cefebf6986d261c21b1a92ac6dfda494950097b
