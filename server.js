@@ -43,6 +43,12 @@ io.sockets.on('connection', function(socket){
     socket.set('color', color);
     socket.set('score', 0);
 
+    socket.emit('message', {
+      pseudo: "**Server**",
+      message: 'Welcome, '+ pseudo +'! Your mission is to put the marker as close as you can to the location of the picture to your left. The closer you are to the target, the more points you earn. Type \'!top10\' in the chat to see if you find yourself among the best 10 players. Have fun!'
+, 
+      color: "#E74C3C0"
+    })
     socket.broadcast.emit('new_player', {pseudo: pseudo, color: color});
 
     socket.on('disconnect', function() {
