@@ -54,6 +54,9 @@ io.sockets.on('connection', function(socket){
     socket.on('disconnect', function() {
       socket.leave('ready');
       api.nbPlayers--;
+      if(api.nbPlayers === 0){
+        api.setCurrent(null);
+      }
       socket.get('pseudo', function (error, pseudo) {
         socket.get('color', function(error, color) {
           console.log(pseudo + ' disconnect');
