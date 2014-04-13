@@ -226,3 +226,19 @@ h1,h2,h3,h4,h4{
 .nav-logo{
   width:55%;
 }
+
+#nprogress .bar {
+  top: 90px;
+  width: 75%;
+  height: 4px;
+  background: #5bc0de;
+  border: 1px solid #46b8da;
+}
+
+#nprogress .peg{
+  display: none;
+}
+
+#nprogress .spinner {
+  display: none;
+}

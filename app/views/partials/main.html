@@ -5,6 +5,7 @@
     <div class="header-info">
     <span>Score <span class="badge">42</span></span>
     </div>
+    <div class="counter" role="bar"></div>
   </header>
   <div class="map-container">
     <google-map  control="map.control" draggable="map.draggable" events="map.events" options="map.options" center="map.center" zoom="map.zoom"></google-map>
@@ -67,15 +68,33 @@
         $('#chatBox').bind('DOMNodeInserted DOMNodeRemoved', function(event) {
             $("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
         });
+
+              var totalTime = 20;
+              var actualTime = 20;
+
+              function decreaseProgressBar() {
+                actualTime--;
+
+                if(actualTime == 0)
+                  actualTime = 19;
+
+                NProgress.set(actualTime / 20);
+              }
         $(document).ready(function(){
               $('#myModal').modal({
                 backdrop:'static',
                 keyboard: false,
-                show: true
+                show: false
               });
 
               $('#formEnterChat').submit(function(){
                 $('#myModal').modal('hide')
               })
+
+              NProgress.configure({ trickle: false });
+              NProgress.set(0.9999);
+
+
+              setInterval('decreaseProgressBar()', 1000);
           });
       </script>
