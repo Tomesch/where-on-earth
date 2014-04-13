@@ -47,6 +47,7 @@ angular.module('woeApp')
 			text = text.replace('&nbsp;', ' ');
 			text = text.replace('&ldquo;', '"');
 			text = text.replace('&rdquo;', '"');
+			text = text.replace('&Oslash;', 'Ø');
 
 			text = text.replace(/<(?:.|\n)*?>/gm, '');
 
