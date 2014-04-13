@@ -30,20 +30,8 @@ angular.module('woeApp')
      $scope.sendMessage = function() {
      	var message = $scope.inputMessage;
      	if(message !== '') {
-     		if(pseudo == null) {
-     			pseudo = message;
-                color = getRandomFlatColor();
-                socket.emit('new_player', {pseudo: pseudo, color: color});
-                var mess = getMessage(servPseudo, "You're connected", color);
-                $scope.messagePlaceHolder = 'Enter your message';
-                $scope.sendValue = 'Send';
-                $scope.messages.push(mess);
-     		}
-     		else {
-     			socket.emit('message', message); 
-     			$scope.messages.push(getMessage(pseudo, message, color));
-     		}
-
+     		socket.emit('message', message); 
+     		$scope.messages.push(getMessage(pseudo, message, color));
      		$scope.inputMessage = '';
      	}
      }
