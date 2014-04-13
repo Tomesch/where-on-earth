@@ -16,18 +16,15 @@ angular.module('woeApp')
      socket.on('message', function(data) {
      	var mess = getMessage(data.pseudo, data.message, data.color);
        	$scope.messages.push(mess);
-       	$scope.$apply();
     });
 
      socket.on('new_player', function(data) {
      	var mess = getMessage(servPseudo, data.pseudo+' enter in chatroom...', data.color);
      	$scope.messages.push(mess);
-     	$scope.$apply();
     });
 
      socket.on('disconnect_player', function(data) {
      	$scope.messages.push(getMessage(servPseudo, data.pseudo+' leave the chatroom...', data.color));
-     	$scope.$apply();
     });
 
      $scope.sendMessage = function() {
