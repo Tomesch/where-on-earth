@@ -19,12 +19,12 @@ angular.module('woeApp')
     });
 
      socket.on('new_player', function(data) {
-     	var mess = getMessage(servPseudo, data.pseudo+' enter in chatroom...', data.color);
+     	var mess = getMessage(servPseudo, data.pseudo+'started playing.', data.color);
      	$scope.messages.push(mess);
     });
 
      socket.on('disconnect_player', function(data) {
-     	$scope.messages.push(getMessage(servPseudo, data.pseudo+' leave the chatroom...', data.color));
+     	$scope.messages.push(getMessage(servPseudo, data.pseudo+' left the chatroom.', data.color));
     });
 
      $scope.sendMessage = function() {
