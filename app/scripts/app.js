@@ -10,16 +10,13 @@ angular.module('woeApp', [
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/play', {
+      .when('/', {
         templateUrl: 'partials/main',
         controller: 'MapCtrl'
       })
       .when('/chat', {
         templateUrl: 'partials/chat',
         controller: 'ChatCtrl'
-      })
-      .when('/',{
-        templateUrl:'partials/start'
       })
       .otherwise({
         redirectTo: '/'
