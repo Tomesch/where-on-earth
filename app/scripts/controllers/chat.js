@@ -31,7 +31,7 @@ angular.module('woeApp')
      	var message = $scope.inputMessage;
      	if(message !== '') {
      		if(pseudo == null) {
-     			pseudo = message;
+     			pseudo = 'noname';
                 color = getRandomFlatColor();
                 socket.emit('new_player', {pseudo: pseudo, color: color});
                 var mess = getMessage(servPseudo, "You're connected", color);

@@ -62,7 +62,7 @@
       </div>
       <form id="formEnterChat" ng-submit="enterChat()">
       <div class="modal-body">
-        <input type="text" class="form-control input-lg" ng-model='inputPseudo' style="border: 1px solid #AAA" required />
+        <input type="text" class="form-control input-lg" ng-model='inputPseudo' style="border: 1px solid #AAA" ng-pattern="[a-zA-Z]" />
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary" style="border: none;">Submit</button>
@@ -86,7 +86,9 @@
                 show: true
               });
 
-              $('#formEnterChat').submit(function(){
+              $('#formEnterChat').submit(function(e){
+                e.preventDefault();
+                return false;
                 $('#myModal').modal('hide')
               })
           });
